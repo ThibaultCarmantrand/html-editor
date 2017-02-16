@@ -10,4 +10,43 @@ html {
 
 body {
   font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+main {
+  width: 75%;
+  max-width: 1080px;
+  margin: auto;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.controls section {
+  padding: 0.8rem;
+  border: 1px solid #aaa;
+  margin: 0.4rem;
+}
+
+
+.textarea-editor {
+  margin: 1.6rem auto 0.8rem auto;
+  width: 100%;
+}
+
+
+.save-btn {
+  display: block;
+  margin: 0.8rem auto 1.6rem auto;
+}
+
+
+.result {
+  width: 100%;
+  min-height: 20rem;
+  padding: 0.8rem;
+  margin: 1.6rem auto;
+  box-shadow: 0 0 4px #aaa;
 }

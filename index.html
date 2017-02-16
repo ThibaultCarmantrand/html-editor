@@ -8,6 +8,7 @@
 </head>
 <body>
 
+<main>
   <section class="controls">
     <section class="text-formatting">
       <button id="ctrl_bold">Gras</button>
@@ -26,18 +27,6 @@
     <section class="lists">
       <button id="ctrl_ul">UL</button>
       <button id="ctrl_ol">OL</button>
-    </section>
-
-
-    <section class="others">
-      <button id="ctrl_hr">HR</button>
-      <button id="ctrl_anchor">Ancre</button>
-      <button id="ctrl_image">Image</button>
-      <button id="ctrl_link">Lien</button>
-      <button id="ctrl_video">Vidéo</button>
-      <button id="ctrl_array">Tableau</button>
-      <button id="control_delete-formatting">Effacer le style</button>
-      <button id="control_show-source">Afficher Code Source</button>
     </section>
 
 
@@ -68,14 +57,26 @@
       <option value="pre">pre</option>
       <option value="blockquote">blockquote</option>
     </select>
+
+    <section class="others">
+      <button id="ctrl_hr">HR</button>
+      <button id="ctrl_anchor">Ancre</button>
+      <button id="ctrl_image">Image</button>
+      <button id="ctrl_link">Lien</button>
+      <button id="ctrl_video">Vidéo</button>
+      <button id="ctrl_array">Tableau</button>
+      <button id="control_delete-formatting">Effacer le style</button>
+      <button id="control_show-source">Afficher Code Source</button>
+    </section>
   </section>
 
-  <textarea id="textarea" cols="80" rows="20"></textarea>
+  <textarea id="textarea" class="textarea-editor" cols="80" rows="20"></textarea>
 
-  <button id="save">Enregistrer</button>
+  <button id="save" class="save-btn">Enregistrer</button>
 
 
-  <section id="result"></section>
+  <section id="result" class="result"></section>
+</main>
 
 
 <script src="script2.js"></script>
