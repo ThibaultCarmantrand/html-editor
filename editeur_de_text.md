@@ -35,12 +35,6 @@
 
 - Enregistrer -> Générer du code HTML
 
-mercredi 22 février DEADLINE!!!!!!!!!
-Chez Margaux.
+On se voit mercredi 22 février chez Margaux.
 
-GIT
-Envoyer à Margaux
-Tout en anglais
-
-Un id sur chaque bouton
 Trouver un pack d'icônes
