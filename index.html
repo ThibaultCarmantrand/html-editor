@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Editor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <section class="controls">
+    <section class="text-formatting">
+      <button id="ctrl_bold">Gras</button>
+      <button id="ctrl_italic">Italique</button>
+      <button id="ctrl_underline">Souligné</button>
+      <button id="ctrl_crossed">Barré</button>
+    </section>
+
+    <section class="text-alignment">
+      <button id="ctrl_left">Gauche</button>
+      <button id="ctrl_center">Centré</button>
+      <button id="ctrl_right">Droit</button>
+      <button id="ctrl_justify">Justifié</button>
+    </section>
+
+    <section class="lists">
+      <button id="ctrl_ul">UL</button>
+      <button id="ctrl_ol">OL</button>
+    </section>
+
+
+    <section class="others">
+      <button id="ctrl_hr">HR</button>
+      <button id="ctrl_anchor">Ancre</button>
+      <button id="ctrl_image">Image</button>
+      <button id="ctrl_link">Lien</button>
+      <button id="ctrl_video">Vidéo</button>
+      <button id="ctrl_array">Tableau</button>
+      <button id="control_delete-formatting">Effacer le style</button>
+      <button id="control_show-source">Afficher Code Source</button>
+    </section>
+
+
+    <section class="colors">
+      <button id="control_txt-color">Couleur du texte</button>
+      <button id="control_bg-color">Couleur de fond</button>
+    </section>
+
+
+    <section class="font-config">
+      <select name="font-size" id="ctrl_font-size">
+        <option value=""></option>
+      </select>
+
+      <select name="font-family" id="ctrl_font-family">
+      </select>
+    </section>
+
+    <select name="formatting" id="">
+      <option value="h1">h1</option>
+      <option value="h2">h2</option>
+      <option value="h3">h3</option>
+      <option value="h4">h4</option>
+      <option value="h5">h5</option>
+      <option value="h6">h6</option>
+      <option value="p">p</option>
+      <option value="code">code</option>
+      <option value="pre">pre</option>
+      <option value="blockquote">blockquote</option>
+    </select>
+  </section>
+
+  <textarea id="textarea" cols="80" rows="20"></textarea>
+
+  <button id="save">Enregistrer</button>
+
+
+  <section id="result"></section>
+
+
+<script src="script2.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
