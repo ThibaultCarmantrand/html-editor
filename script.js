@@ -10,7 +10,7 @@ function save () {
 
   new_text = '<p>' + text + '</p>';
   console.log(new_text);
-  result.innerHTML = new_text;
+  result.textContent = new_text;
 }
 
 
