@@ -31,9 +31,13 @@ main {
 }
 
 
-.textarea-editor {
+.editor-input {
   margin: 1.6rem auto 0.8rem auto;
   width: 100%;
+  min-height: 200px;
+  box-shadow: 0 0 4px #aaa;
+  padding: 0.8rem;
+  overflow: auto;
 }
 
 
@@ -49,4 +53,10 @@ main {
   padding: 0.8rem;
   margin: 1.6rem auto;
   box-shadow: 0 0 4px #aaa;
+}
+
+
+
+.underline {
+  text-decoration: underline;
 }
