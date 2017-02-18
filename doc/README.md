@@ -1,2 +1,0 @@
-# html-editor
-Éditeur HTML
