@@ -1,0 +1,30 @@
+{
+  "name": "html-editor",
+  "version": "0.1.0",
+  "description": "HTML Editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThibaultCarmantrand/html-editor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThibaultCarmantrand/html-editor/issues"
+  },
+  "homepage": "https://github.com/ThibaultCarmantrand/html-editor#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "latest",
+    "gulp-cssbeautify": "latest",
+    "gulp-csso": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-rename": "latest",
+    "gulp-scss": "latest",
+    "gulp-uglify": "latest"
+  }
+}
