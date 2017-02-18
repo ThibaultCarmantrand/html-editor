@@ -4,24 +4,24 @@
   <meta charset="UTF-8">
   <title>HTML Editor</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./assets/css/min/styles.min.css">
 </head>
 <body>
 
 <main>
   <section class="controls">
     <section class="text-formatting">
-      <button id="bold" class="command">Gras</button>
-      <button id="italic" class="command">Italique</button>
-      <button id="underline" class="command">Souligné</button>
-      <button id="strikeThrough" class="command">Barré</button>
+      <button id="ctrl_bold" data-command="bold">Gras</button>
+      <button id="ctrl_italic" data-command="italic">Italique</button>
+      <button id="ctrl_underline" data-command="underline">Souligné</button>
+      <button id="ctrl_crossed" data-command="strikeThrough">Barré</button>
     </section>
 
     <section class="text-alignment">
-      <button id="ctrl_left">Gauche</button>
-      <button id="ctrl_center">Centré</button>
-      <button id="ctrl_right">Droit</button>
-      <button id="ctrl_justify">Justifié</button>
+      <button id="ctrl_left" data-command="justifyLeft">Gauche</button>
+      <button id="ctrl_center" data-command="justifyCenter">Centré</button>
+      <button id="ctrl_right" data-command="justifyRight">Droit</button>
+      <button id="ctrl_justify" data-command="justifyFull">Justifié</button>
     </section>
 
     <section class="lists">
@@ -31,11 +31,8 @@
 
 
     <section class="colors">
-      <!--<button id="control_txt-color" class="jscolor{valueElement:'valueInput', styleElement:'styleInput'}" >Couleur du texte</button>-->
-      <!--<button id="control_txt-color" >Couleur du texte :</button> -->
-      <label>Couleur du texte :</label><input type="text" id="valueInput" class="jscolor" value="ff6699" onchange="updateInput(this.value);" />
-
-      <button id="control_bg-color">Couleur de fond</button>
+      <label>Couleur du texte :</label><input type="button" id="control_txt-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="foreColor"/>
+      <label>Couleur de fond :</label><input type="button" id="control_bg-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="hiliteColor" />
     </section>
 
 
@@ -83,12 +80,11 @@
   <article id="post">
     <p id="editable" contenteditable="true">method is called and the returned value <strong>is passed to</strong> the function. This can make the object appear to be a string when used with other functions when it is really an object with properties and methods.</p>
   </article>
-  <p id="text_copy"></p>
 
 </main>
 
-<script src="includes/jscolor.js"></script>
-<script src="script_new.js"></script>
+<script src="./assets/js/jscolor.min.js"></script>
+<script src="./assets/js/script2.min.js"></script>
 
 <!--<script src="script.js"></script>-->
 </body>
