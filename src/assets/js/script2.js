@@ -1,5 +1,3 @@
-var text_copy = document.getElementById('text_copy');
-
 var editable = document.getElementById('editable');
 var section_editable = editable.textContent;
 
@@ -19,11 +17,13 @@ for (i=0; i<btn.length; ++i) {
   //btn[i].style.color="green";
 }
 
-function updateInput(evt) {
-  document.getElementById("control_txt-color").value=evt;
+function updateInput(id_button,evt) {
   if (document.getSelection) {
+    this.value = evt;
+    this.id = document.getElementById(id_button);
+    var color_type = this.id.getAttribute('data-command');
     var selectedText = document.getSelection();
-    var style_effect = document.execCommand('foreColor','','#'+evt+"'");
+    var style_effect = document.execCommand(color_type,'','#'+evt+"'");
     var res = section_editable.replace(selectedText,style_effect);
   }
 }

@@ -11,54 +11,47 @@
 <main>
   <section class="controls">
     <section class="text-formatting">
-      <button id="ctrl_bold" onclick="command('bold');">Gras</button>
-      <button id="ctrl_italic" onclick="command('italic');">Italique</button>
-      <button id="ctrl_underline" onclick="command('underline');">Souligné</button>
-      <button id="ctrl_crossed" onclick="command('strikeThrough');">Barré</button>
+      <button id="ctrl_bold" data-command="bold">Gras</button>
+      <button id="ctrl_italic" data-command="italic">Italique</button>
+      <button id="ctrl_underline" data-command="underline">Souligné</button>
+      <button id="ctrl_crossed" data-command="strikeThrough">Barré</button>
     </section>
 
     <section class="text-alignment">
-      <button id="ctrl_left" onclick="command('justifyLeft');">Gauche</button>
-      <button id="ctrl_center" onclick="command('justifyCenter');">Centré</button>
-      <button id="ctrl_right" onclick="command('justifyRight');">Droit</button>
-      <button id="ctrl_justify" onclick="command('justifyFull');">Justifié</button>
+      <button id="ctrl_left" data-command="justifyLeft">Gauche</button>
+      <button id="ctrl_center" data-command="justifyCenter">Centré</button>
+      <button id="ctrl_right" data-command="justifyRight">Droit</button>
+      <button id="ctrl_justify" data-command="justifyFull">Justifié</button>
     </section>
 
     <section class="lists">
-      <button id="ctrl_ul" onclick="command('insertUnorderedList');">UL</button>
-      <button id="ctrl_ol" onclick="command('insertOrderedList');">OL</button>
+      <button id="ctrl_ul">UL</button>
+      <button id="ctrl_ol">OL</button>
     </section>
 
 
     <section class="colors">
-      <label for="ctrl_txt_color">Couleur du texte</label><input type="color" name="ctrl_txt_color" id="ctrl_txt-color" onchange="command('foreColor', this.value)">
-      <label for="ctrl_bg_color">Couleur du surlignage</label><input type="color" name="ctrl_bg_color" id="ctrl_bg-color" onchange="command('hiliteColor', this.value)">
+      <label>Couleur du texte :</label><input type="button" id="control_txt-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="foreColor"/>
+      <label>Couleur de fond :</label><input type="button" id="control_bg-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="hiliteColor" />
     </section>
 
 
     <section class="font-config">
-      <select name="font-size" id="ctrl_font-size"  onchange="command('fontSize', this.value);">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-1      </select>
+      <select name="font-size" id="ctrl_font-size">
+        <option value=""></option>
+      </select>
 
       <select name="font-family" id="ctrl_font-family">
       </select>
     </section>
 
-    <select name="formatting" onchange="command('formatBlock', this.value); this.selectedIndex = 0;">
-      <option value="">Niveau de texte</option>
-      <option value="H1">h1</option>
-      <option value="H2">h2</option>
-      <option value="H3">h3</option>
-      <option value="H4">h4</option>
-      <option value="H5">h5</option>
-      <option value="H6">h6</option>
+    <select name="formatting" id="format" onchange="format_button();">
+      <option value="h1">h1</option>
+      <option value="h2">h2</option>
+      <option value="h3">h3</option>
+      <option value="h4">h4</option>
+      <option value="h5">h5</option>
+      <option value="h6">h6</option>
       <option value="p">p</option>
       <option value="code">code</option>
       <option value="pre">pre</option>
@@ -66,30 +59,33 @@
     </select>
 
     <section class="others">
-      <button id="ctrl_hr"  onclick="command('insertHorizontalRule');">HR</button>
+      <button id="ctrl_hr">HR</button>
       <button id="ctrl_anchor">Ancre</button>
-      <button id="ctrl_image" onclick="command('insertImage');">Image</button>
-      <button id="ctrl_link" onclick="command('createLink');">Lien</button>
+      <button id="ctrl_image">Image</button>
+      <button id="ctrl_link">Lien</button>
       <button id="ctrl_video">Vidéo</button>
       <button id="ctrl_array">Tableau</button>
-      <button id="ctrl_delete-formatting" onclick="command('removeFormat');">Effacer le style</button>
-      <button id="ctrl_show-source">Afficher Code Source</button>
-      <button id="ctrl_undo" onclick="command('undo')">Undo</button>
-      <button id="ctrl_redo" onclick="command('redo')">Redo</button>
-
+      <button id="control_delete-formatting">Effacer le style</button>
+      <button id="control_show-source">Afficher Code Source</button>
     </section>
   </section>
 
-  <section id="editor" class="editor-input" contentEditable>Editer le texte</section>
+<!--  <textarea id="textarea" class="textarea-editor" cols="80" rows="10"></textarea>
 
   <button id="save" class="save-btn">Enregistrer</button>
 
-
   <section id="result" class="result"></section>
+-->
+
+  <article id="post">
+    <p id="editable" contenteditable="true">method is called and the returned value <strong>is passed to</strong> the function. This can make the object appear to be a string when used with other functions when it is really an object with properties and methods.</p>
+  </article>
+
 </main>
 
-
+<script src="./assets/js/jscolor.min.js"></script>
 <script src="./assets/js/script2.min.js"></script>
-<script src="./assets/js/script.min.js"></script>
+
+<!--<script src="script.js"></script>-->
 </body>
 </html>

@@ -18,10 +18,10 @@
     </section>
 
     <section class="text-alignment">
-      <button id="ctrl_left">Gauche</button>
-      <button id="ctrl_center">Centré</button>
-      <button id="ctrl_right">Droit</button>
-      <button id="ctrl_justify">Justifié</button>
+      <button id="ctrl_left" data-command="justifyLeft">Gauche</button>
+      <button id="ctrl_center" data-command="justifyCenter">Centré</button>
+      <button id="ctrl_right" data-command="justifyRight">Droit</button>
+      <button id="ctrl_justify" data-command="justifyFull">Justifié</button>
     </section>
 
     <section class="lists">
@@ -31,11 +31,8 @@
 
 
     <section class="colors">
-      <!--<button id="control_txt-color" class="jscolor{valueElement:'valueInput', styleElement:'styleInput'}" >Couleur du texte</button>-->
-      <!--<button id="control_txt-color" >Couleur du texte :</button> -->
-      <label>Couleur du texte :</label><input type="text" id="control_txt-color" class="jscolor" value="ff6699" onchange="updateInput(this.value);" />
-
-      <button id="control_bg-color">Couleur de fond</button>
+      <label>Couleur du texte :</label><input type="button" id="control_txt-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="foreColor"/>
+      <label>Couleur de fond :</label><input type="button" id="control_bg-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="hiliteColor" />
     </section>
 
 
@@ -83,12 +80,11 @@
   <article id="post">
     <p id="editable" contenteditable="true">method is called and the returned value <strong>is passed to</strong> the function. This can make the object appear to be a string when used with other functions when it is really an object with properties and methods.</p>
   </article>
-  <p id="text_copy"></p>
 
 </main>
 
-<script src="./assets/js/min/jscolor.min.js"></script>
-<script src="./assets/js/min/script2.min.js"></script>
+<script src="./assets/js/jscolor.min.js"></script>
+<script src="./assets/js/script2.min.js"></script>
 
 <!--<script src="script.js"></script>-->
 </body>
