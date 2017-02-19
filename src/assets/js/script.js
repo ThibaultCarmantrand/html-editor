@@ -15,6 +15,7 @@ function save () {
 
 
 function command (name, argument) {
+  var execute = true;
   if (typeof argument === 'undefined') argument = '';
   // Execute the command
   switch(name) {
@@ -26,5 +27,6 @@ function command (name, argument) {
       argument = prompt("Adresse de l'image ?");
     break;
   }
-  document.execCommand(name, false, argument);
+  if (argument === '') execute = false;
+  if (execute) document.execCommand(name, false, argument);
 }
