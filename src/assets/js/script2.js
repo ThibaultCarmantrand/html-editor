@@ -1,16 +1,13 @@
-//var editable = document.getElementById('editable');
-
-
+var editable = document.getElementById('editable');
+var section_editable = editable.textContent;
 var save_btn = document.getElementById('save');
-var editor = document.getElementById('editor');
-var section_editable = editor.textContent;
 var result = document.getElementById('result');
 
 save_btn.addEventListener('click', save);
 
 function save () {
   var new_text = '';
-  var text = editor.innerHTML;
+  var text = editable.innerHTML;
 
   new_text = '<p>' + text + '</p>';
   console.log(new_text);
