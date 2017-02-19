@@ -25,27 +25,34 @@
     </section>
 
     <section class="lists">
-      <button id="ctrl_ul">UL</button>
-      <button id="ctrl_ol">OL</button>
+      <button id="ctrl_ul" data-command="insertUnorderedList">UL</button>
+      <button id="ctrl_ol" data-command="insertOrderedList">OL</button>
     </section>
 
 
     <section class="colors">
-      <label>Couleur du texte :</label><input type="button" id="control_txt-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="foreColor"/>
-      <label>Couleur de fond :</label><input type="button" id="control_bg-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="hiliteColor" />
+      <label>Couleur du texte :</label><input type="color" id="control_txt-color" value="" onchange="command_argument('foreColor',this.value);" data-command="foreColor"/>
+      <label>Couleur de fond :</label><input type="color" id="control_bg-color" value="" onchange="command_argument('hiliteColor',this.value);" data-command="hiliteColor" />
     </section>
 
 
     <section class="font-config">
-      <select name="font-size" id="ctrl_font-size">
-        <option value=""></option>
+      <select name="font-size" id="ctrl_font-size" onchange="command_argument('fontSize', this.value);" data-command="fontSize">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
       </select>
 
       <select name="font-family" id="ctrl_font-family">
       </select>
     </section>
 
-    <select name="formatting" id="format" onchange="format_button();">
+    <select name="formatting" id="format" onchange="command_argument('formatBlock', this.value);" data-command="formatBlock">
+      <option value="">Niveau de texte</option>
       <option value="h1">h1</option>
       <option value="h2">h2</option>
       <option value="h3">h3</option>
@@ -59,31 +66,26 @@
     </select>
 
     <section class="others">
-      <button id="ctrl_hr">HR</button>
+      <button id="ctrl_hr" data-command="insertHorizontalRule">HR</button>
       <button id="ctrl_anchor">Ancre</button>
-      <button id="ctrl_image">Image</button>
-      <button id="ctrl_link">Lien</button>
+      <button id="ctrl_image" data-command="insertImage">Image</button>
+      <button id="ctrl_link" data-command="createLink">Lien</button>
       <button id="ctrl_video">Vidéo</button>
       <button id="ctrl_array">Tableau</button>
-      <button id="control_delete-formatting">Effacer le style</button>
-      <button id="control_show-source">Afficher Code Source</button>
+      <button id="control_delete-formatting" data-command="removeFormat">Effacer le style</button>
+      <button id="control_show-source" data-command="insertHTML">Afficher Code Source</button>
     </section>
   </section>
 
-<!--  <textarea id="textarea" class="textarea-editor" cols="80" rows="10"></textarea>
+  <article id="post">
+    <section id="editor" class="editor-input" contenteditable="true">method is called and the returned value <strong>is passed to</strong> the function. This can make the object appear to be a string when used with other functions when it is really an object with properties and methods.</section>
+  </article>
 
   <button id="save" class="save-btn">Enregistrer</button>
 
   <section id="result" class="result"></section>
--->
-
-  <article id="post">
-    <p id="editable" contenteditable="true">method is called and the returned value <strong>is passed to</strong> the function. This can make the object appear to be a string when used with other functions when it is really an object with properties and methods.</p>
-  </article>
-
 </main>
 
-<script src="./assets/js/jscolor.min.js"></script>
 <script src="./assets/js/script2.min.js"></script>
 
 <!--<script src="script.js"></script>-->

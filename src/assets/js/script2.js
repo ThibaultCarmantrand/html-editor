@@ -1,29 +1,51 @@
-var editable = document.getElementById('editable');
-var section_editable = editable.textContent;
+//var editable = document.getElementById('editable');
 
+
+var save_btn = document.getElementById('save');
+var editor = document.getElementById('editor');
+var section_editable = editor.textContent;
+var result = document.getElementById('result');
+
+save_btn.addEventListener('click', save);
+
+function save () {
+  var new_text = '';
+  var text = editor.innerHTML;
+
+  new_text = '<p>' + text + '</p>';
+  console.log(new_text);
+  result.textContent = new_text;
+}
 
 // attribute an action of buttons with class "command"
 var btn = document.querySelectorAll('button'), i;
 
 for (i=0; i<btn.length; ++i) {
-  btn[i].addEventListener("click", function(){
-    var effect = this.getAttribute('data-command');
-    if (document.getSelection) {
-      var selectedText = document.getSelection();
-      var style_effect = document.execCommand(effect);
-      var res = section_editable.replace(selectedText,style_effect);
-    }
-  });
-  //btn[i].style.color="green";
+  btn[i].addEventListener("click", command);
 }
 
-function updateInput(id_button,evt) {
+function command() {
+  var effect = this.getAttribute('data-command');
+  if (typeof argument === 'undefined') argument = '';
+  switch(effect) {
+    case 'formatBlock':
+      argument = this.value;
+    break;
+    case 'createLink':
+      argument = prompt("Adresse du lien ?");
+    break;
+
+    case 'insertImage':
+      argument = prompt("Adresse de l'image ?");
+    break;
+  }
+  document.execCommand(effect,'',argument);
+}
+
+function command_argument(command_name,evt) {
   if (document.getSelection) {
-    this.value = evt;
-    this.id = document.getElementById(id_button);
-    var color_type = this.id.getAttribute('data-command');
     var selectedText = document.getSelection();
-    var style_effect = document.execCommand(color_type,'','#'+evt+"'");
+    var style_effect =document.execCommand(command_name,'',evt);
     var res = section_editable.replace(selectedText,style_effect);
   }
 }
