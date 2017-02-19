@@ -13,87 +13,81 @@
   <section class="controls">
 
     <section class="text-formatting">
-      <button id="ctrl_bold" onclick="command('bold');"><i class="fa fa-bold"></i></button>
-      <button id="ctrl_italic" onclick="command('italic');"><i class="fa fa-italic"></i></button>
-      <button id="ctrl_underline" onclick="command('underline');"><i class="fa fa-underline"></i></button>
-      <button id="ctrl_crossed" onclick="command('strikeThrough');"><i class="fa fa-strikethrough"></i></button>
+      <button id="ctrl_bold" data-command="bold"><i class="fa fa-bold"></i></button>
+      <button id="ctrl_italic" data-command="italic"><i class="fa fa-italic"></i></button>
+      <button id="ctrl_underline" data-command="underline"><i class="fa fa-underline"></i></button>
+      <button id="ctrl_crossed" data-command="strikeThrough"><i class="fa fa-strikethrough"></i></button>
     </section>
 
     <section class="text-alignment">
-      <button id="ctrl_left" onclick="command('justifyLeft');"><i class="fa fa-align-left"></i></button>
-      <button id="ctrl_center" onclick="command('justifyCenter');"><i class="fa fa-align-center"></i></button>
-      <button id="ctrl_right" onclick="command('justifyRight');"><i class="fa fa-align-right"></i></button>
-      <button id="ctrl_justify" onclick="command('justifyFull');"><i class="fa fa-align-justify"></i></button>
+      <button id="ctrl_left" data-command="justifyLeft"><i class="fa fa-align-left"></i></button>
+      <button id="ctrl_center" data-command="justifyCenter"><i class="fa fa-align-center"></i></button>
+      <button id="ctrl_right" data-command="justifyRight"><i class="fa fa-align-right"></i></button>
+      <button id="ctrl_justify" data-command="justifyFull"><i class="fa fa-align-justify"></i></button>
     </section>
 
     <section class="lists">
-      <button id="ctrl_ul" onclick="command('insertUnorderedList');"><i class="fa fa-list-ul"></i></button>
-      <button id="ctrl_ol" onclick="command('insertOrderedList');"><i class="fa fa-list-ol"></i></button>
+      <button id="ctrl_ul" data-command="insertUnorderedList"><i class="fa fa-list-ul"></i></button>
+      <button id="ctrl_ol" data-command="insertOrderedList"><i class="fa fa-list-ol"></i></button>
     </section>
 
 
     <section class="colors">
-      <label for="ctrl_txt_color"><i class="fa fa-font txt-color-icon"></i></label><input type="color" name="ctrl_txt_color" id="ctrl_txt-color" onchange="command('foreColor', this.value)">
-      <label for="ctrl_bg_color"><i class="fa fa-font bg-color-icon"></i></label><input type="color" name="ctrl_bg_color" id="ctrl_bg-color" onchange="command('hiliteColor', this.value)">
+      <label>Couleur du texte :</label><input type="button" id="control_txt-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="foreColor"/>
+      <label>Couleur de fond :</label><input type="button" id="control_bg-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="hiliteColor" />
     </section>
 
 
     <section class="font-config">
-      <select name="font-size" id="ctrl_font-size"  onchange="command('fontSize', this.value);">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-1      </select>
+      <select name="font-size" id="ctrl_font-size">
+        <option value=""></option>
+      </select>
 
       <select name="font-family" id="ctrl_font-family">
       </select>
     </section>
 
-    <section>
-      <select name="formatting" onchange="command('formatBlock', this.value); this.selectedIndex = 0;">
-        <option value="">Niveau de texte</option>
-        <option value="H1">h1</option>
-        <option value="H2">h2</option>
-        <option value="H3">h3</option>
-        <option value="H4">h4</option>
-        <option value="H5">h5</option>
-        <option value="H6">h6</option>
-        <option value="p">p</option>
-        <option value="code">code</option>
-        <option value="pre">pre</option>
-        <option value="blockquote">blockquote</option>
+    <select name="formatting" id="format" onchange="format_button();">
+      <option value="h1">h1</option>
+      <option value="h2">h2</option>
+      <option value="h3">h3</option>
+      <option value="h4">h4</option>
+      <option value="h5">h5</option>
+      <option value="h6">h6</option>
+      <option value="p">p</option>
+      <option value="code">code</option>
+      <option value="pre">pre</option>
+      <option value="blockquote">blockquote</option>
     </select>
-    </section>
 
     <section class="others">
-      <button id="ctrl_hr"  onclick="command('insertHorizontalRule');">HR</button>
+      <button id="ctrl_hr" data-command="insertHorizontalRule">HR</button>
       <button id="ctrl_anchor">Ancre</button>
       <button id="ctrl_image" onclick="command('insertImage');"><i class="fa fa-image"></i></button>
       <button id="ctrl_link" onclick="command('createLink');"><i class="fa fa-link"></i></button>
       <button id="ctrl_video"><i class="fa fa-youtube-play"></i></button>
       <button id="ctrl_array"><i class="fa fa-table"></i></button>
-      <button id="ctrl_delete-formatting" onclick="command('removeFormat');">Effacer le style</button>
+      <button id="ctrl_delete-formatting" data-command="removeFormat">Effacer le style</button>
       <button id="ctrl_show-source">Afficher Code Source</button>
       <button id="ctrl_undo" onclick="command('undo')"><i class="fa fa-rotate-left"></i></button>
       <button id="ctrl_redo" onclick="command('redo')"><i class="fa fa-rotate-right"></i></button>
-
     </section>
   </section>
 
-  <section id="editor" class="editor-input" contentEditable>Editer le texte</section>
+  <article id="post">
+    <p id="editable" contenteditable="true">method is called and the returned value <strong>is passed to</strong> the function. This can make the object appear to be a string when used with other functions when it is really an object with properties and methods.</p>
+  </article>
 
   <button id="save" class="save-btn">Enregistrer</button>
 
-
   <section id="result" class="result"></section>
+
 </main>
 
-
+<script src="./assets/js/jscolor.min.js"></script>
 <script src="./assets/js/script2.min.js"></script>
 <script src="./assets/js/script.min.js"></script>
+
+<!--<script src="script.js"></script>-->
 </body>
 </html>

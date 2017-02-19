@@ -1,5 +1,5 @@
 var save_btn = document.getElementById('save');
-var editor = document.getElementById('editor');
+var editor = document.getElementById('editable');
 var result = document.getElementById('result');
 
 save_btn.addEventListener('click', save);
