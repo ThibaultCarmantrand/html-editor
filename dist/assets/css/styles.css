@@ -29,9 +29,38 @@ main {
 }
 
 .controls section {
-  padding: 0.8rem;
-  border: 1px solid #aaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.4rem;
   margin: 0.4rem;
+  box-shadow: 0 0 4px #444;
+}
+
+.controls button {
+  border: 0;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #eee;
+}
+
+.controls .fa {
+  color: #333;
+  position: relative;
+}
+
+.colors > *,
+.font-config > * {
+  margin: 0 0.4rem;
 }
 
 .editor-input {
