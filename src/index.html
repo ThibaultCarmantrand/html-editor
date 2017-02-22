@@ -33,21 +33,28 @@
 
 
     <section class="colors">
-      <label>Couleur du texte :</label><input type="button" id="control_txt-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="foreColor"/>
-      <label>Couleur de fond :</label><input type="button" id="control_bg-color" class="jscolor" value="ff6699" onchange="updateInput(this.id,this.value);" data-command="hiliteColor" />
+      <label>Couleur du texte :</label><input type="color" id="control_txt-color" value="" onchange="command_argument('foreColor',this.value);" data-command="foreColor"/>
+      <label>Couleur de fond :</label><input type="color" id="control_bg-color" value="" onchange="command_argument('hiliteColor',this.value);" data-command="hiliteColor" />
     </section>
 
 
     <section class="font-config">
-      <select name="font-size" id="ctrl_font-size">
-        <option value=""></option>
+      <select name="font-size" id="ctrl_font-size" onchange="command_argument('fontSize', this.value);" data-command="fontSize">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
       </select>
 
       <select name="font-family" id="ctrl_font-family">
       </select>
     </section>
 
-    <select name="formatting" id="format" onchange="format_button();">
+    <select name="formatting" id="format" onchange="command_argument('formatBlock', this.value);" data-command="formatBlock">
+      <option value="">Niveau de texte</option>
       <option value="h1">h1</option>
       <option value="h2">h2</option>
       <option value="h3">h3</option>
@@ -69,6 +76,12 @@
       <button id="ctrl_array"><i class="fa fa-table"></i></button>
       <button id="ctrl_delete-formatting" data-command="removeFormat">Effacer le style</button>
       <button id="ctrl_show-source">Afficher Code Source</button>
+      <button id="ctrl_link" data-command="createLink"><i class="fa fa-link"></i></button>
+      <button id="ctrl_image" data-command="insertImage"><i class="fa fa-image"></i></button>
+      <button id="ctrl_video"><i class="fa fa-youtube-play"></i></button>
+      <button id="ctrl_array"><i class="fa fa-table"></i></button>
+      <button id="control_delete-formatting" data-command="removeFormat">Effacer le style</button>
+      <button id="control_show-source">Afficher Code Source</button>
       <button id="ctrl_undo" onclick="command('undo')"><i class="fa fa-rotate-left"></i></button>
       <button id="ctrl_redo" onclick="command('redo')"><i class="fa fa-rotate-right"></i></button>
     </section>
@@ -81,12 +94,10 @@
   <button id="save" class="save-btn">Enregistrer</button>
 
   <section id="result" class="result"></section>
-
 </main>
 
-<script src="./assets/js/jscolor.min.js"></script>
-<script src="./assets/js/script2.min.js"></script>
 <script src="./assets/js/script.min.js"></script>
+<script src="./assets/js/script2.min.js"></script>
 
 </body>
 </html>
